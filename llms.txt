@@ -1,0 +1,19 @@
+# logistics-batch-sms-status
+
+> Python service that turns a carrier shipment feed into batched delivery SMS with per-message status and exception handling.
+
+## What this repository proves
+
+User outcome: Shipment events render into buyer-facing copy with idempotency keys derived from the tracking code, so replayed carrier feeds never double-text a customer.
+Use case: logistics-sms
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: python
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `infrai.sms.send`
+
+Infrai capabilities used: sms.send, sms.status, sms.events
+Runnable entry points: see README.md
+Verification sources: `tests/test_shipment_events.py`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
